@@ -48,7 +48,7 @@ public class WebTest {
         // 这里URLEncoder.encode可以防止中文乱码 当然和easyexcel没有关系
         String fileName = URLEncoder.encode("测试", "UTF-8").replaceAll("\\+", "%20");
         response.setHeader("Content-disposition", "attachment;filename*=utf-8''" + fileName + ".xlsx");
-
+        //设置sheet名称，对应表头-实体类，doWrite数据
         EasyExcel.write(response.getOutputStream(), DownloadData.class).sheet("模板").doWrite(data());
     }
 
@@ -104,6 +104,7 @@ public class WebTest {
             data.setString("字符串" + 0);
             data.setDate(new Date());
             data.setDoubleData(0.56);
+            data.setAge(14);
             list.add(data);
         }
         return list;

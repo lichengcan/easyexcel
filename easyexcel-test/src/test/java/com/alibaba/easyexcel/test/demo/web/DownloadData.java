@@ -23,4 +23,7 @@ public class DownloadData {
     private Date date;
     @ExcelProperty("数字标题")
     private Double doubleData;
+
+    @ExcelProperty("年龄")
+    private Integer age;
 }

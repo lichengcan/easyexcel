@@ -18,4 +18,5 @@ public class UploadData {
     private String string;
     private Date date;
     private Double doubleData;
+    private Integer age;
 }
