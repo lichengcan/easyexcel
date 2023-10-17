@@ -93,7 +93,7 @@ public class WebTest {
     @PostMapping("upload")
     @ResponseBody
     public String upload(MultipartFile file) throws IOException {
-        EasyExcel.read(file.getInputStream(), UploadData.class, new UploadDataListener(uploadDAO)).sheet().doRead();
+        EasyExcel.read(file.getInputStream(), UploadData1.class, new UploadDataListener(uploadDAO)).sheet().doRead();
         return "success";
     }
 
